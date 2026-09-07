@@ -1,0 +1,42 @@
+name: LeadFlow Daily Activity
+
+on:
+  schedule:
+    # 11:00 PM Colombia (UTC-5)
+    - cron: "0 4 * * *"
+
+  # Permite ejecutarlo manualmente
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-activity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config user.name "zharick-acosta"
+          git config user.email "designbyzharick@gmail.com"
+
+      - name: Add daily activity
+        run: |
+          mkdir -p .github
+          
+          if [ ! -f .github/daily-activity.md ]; then
+            echo "# LeadFlow — Daily Activity Log" > .github/daily-activity.md
+            echo "" >> .github/daily-activity.md
+          fi
+
+          echo "$(date -u '+%Y-%m-%d') — Daily check: everything is in order. ✅" >> .github/daily-activity.md
+
+      - name: Commit daily activity
+        run: |
+          git add .github/daily-activity.md
+          git commit -m "chore: daily activity $(date -u '+%Y-%m-%d')" || exit 0
+          git push
