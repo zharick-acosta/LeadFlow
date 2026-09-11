@@ -57,3 +57,205 @@ body {
     outline: none;
     border-color: var(--color-gray-500);
 }
+/* ==========================================
+   AUTENTICACIÓN
+   ========================================== */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.auth-card h2 {
+    font-size: 1.125rem;
+    color: var(--color-gray-500);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--color-gray-700);
+}
+
+.form-group small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    margin-top: 0.25rem;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9375rem;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+.auth-link a {
+    color: var(--color-gray-900);
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    text-align: center;
+    display: none;
+}
+
+.message:not(:empty) {
+    display: block;
+}
+
+.message-info {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-700);
+}
+
+.message-success {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-900);
+    border: 1px solid var(--color-gray-300);
+}
+
+.message-error {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-900);
+    border: 1px solid var(--color-black);
+}
+
+/* Auth buttons en index */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+/* ==========================================
+   DASHBOARD / APP
+   ========================================== */
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: 1rem 2rem;
+}
+
+.app-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.app-header-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-email {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-gray-900);
+    border: 1px solid var(--color-gray-300);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-gray-100);
+    opacity: 1;
+}
+
+.app-main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.app-main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.app-main-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.leads-container {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 8px;
+    padding: 2rem;
+    min-height: 300px;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-gray-500);
+    padding: 3rem 1rem;
+}
+
+.empty-state p {
+    margin-bottom: 0.5rem;
+}
+
+.text-muted {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
