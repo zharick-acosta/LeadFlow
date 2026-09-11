@@ -37,9 +37,9 @@ LeadsFlow busca resolver eso con una herramienta directa y sin fricción, diseñ
 | Definición del producto y flujo    | ✅ Completado   |
 | Diseño del Dashboard V1            | ✅ Completado   |
 | Diseño de vista individual de lead | ✅ Completado   |
-| Modelo Entidad-Relación (ERD)      | 🔄 En progreso  |
-| Estructura de la base de datos     | ⏳ Pendiente    |
-| Definición del stack tecnológico   | ⏳ Pendiente    |
+| Modelo Entidad-Relación (ERD)      | ✅ Completado |
+| Estructura de la base de datos     | ✅ Completado  |
+| Definición del stack tecnológico   | 🔄 En progreso   |
 | Implementación del frontend        | ⏳ Pendiente    |
 | Implementación del backend         | ⏳ Pendiente    |
 | MVP funcional                      | ⏳ Pendiente    |
@@ -100,15 +100,15 @@ Acciones disponibles: **editar** y **eliminar**.
 - [x] Definición del producto y flujo general
 - [x] Diseño del Dashboard V1
 - [x] Diseño de vista individual del lead
-- [ ] Modelo Entidad-Relación (ERD)
-- [ ] Estructura de la base de datos
+- [x] Modelo Entidad-Relación (ERD)
+- [x] Estructura de la base de datos
 - [ ] Definición del stack tecnológico
 
 ### Fase 2 — Desarrollo del MVP
 - [ ] Estructura base del proyecto
-- [ ] Formulario de registro de leads
+- [x] Formulario de registro de leads
 - [ ] Dashboard con listado y filtros
-- [ ] Vista individual del lead
+- [x] Vista individual del lead
 - [ ] Operaciones CRUD completas
 - [ ] Validaciones y manejo de errores básico
 
