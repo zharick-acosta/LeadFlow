@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
         <header class="app-header">
             <div class="app-header-content">
                 <h1 class="app-logo">LeadsFlow</h1>
@@ -19,26 +18,103 @@
             </div>
         </header>
 
-        <!-- Main -->
         <main class="app-main">
             <div class="app-main-header">
                 <h2>Mis Leads</h2>
                 <button id="new-lead-btn" class="btn">+ Nuevo Lead</button>
             </div>
 
-            <!-- Lista de leads -->
-            <div id="leads-container" class="leads-container">
-                <div class="empty-state">
-                    <p>Aún no tienes leads registrados.</p>
-                    <p class="text-muted">Crea tu primer lead para empezar a usar LeadsFlow.</p>
-                </div>
-            </div>
+            <div id="leads-container" class="leads-container"></div>
         </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- MODAL PARA CREAR / EDITAR LEAD -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Nuevo Lead</h3>
+                <button id="close-modal-btn" class="modal-close" type="button">×</button>
+            </div>
+
+            <form id="lead-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-nombre">Nombre *</label>
+                        <input type="text" id="field-nombre" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="field-apellido">Apellido *</label>
+                        <input type="text" id="field-apellido" class="input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-email">Email</label>
+                        <input type="email" id="field-email" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label for="field-telefono">Teléfono</label>
+                        <input type="tel" id="field-telefono" class="input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-empresa">Empresa</label>
+                        <input type="text" id="field-empresa" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label for="field-servicio">Servicio</label>
+                        <input type="text" id="field-servicio" class="input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-estado">Estado</label>
+                        <select id="field-estado" class="input">
+                            <option value="Nuevo">Nuevo</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En negociación">En negociación</option>
+                            <option value="Ganado">Ganado</option>
+                            <option value="Perdido">Perdido</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="field-fecha-contrato">Fecha de contrato</label>
+                        <input type="date" id="field-fecha-contrato" class="input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="field-proximo-paso">Próximo paso</label>
+                    <input type="text" id="field-proximo-paso" class="input">
+                </div>
+
+                <div class="form-group">
+                    <label for="field-notas">Notas</label>
+                    <textarea id="field-notas" class="input" rows="3"></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="delete-lead-btn" class="btn btn-danger">Eliminar</button>
+                    <div class="modal-actions-right">
+                        <button type="button" class="btn btn-secondary" onclick="closeLeadModal()">Cancelar</button>
+                        <button type="submit" class="btn">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- Contenedor de notificaciones -->
+<div id="notifications-container" class="notifications-container"></div>
+       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/config.js"></script>
+    <script src="js/notifications.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/leads.js"></script>
+    <script src="js/dashboard.js"></script>
     <script>
         initDashboard();
     </script>
