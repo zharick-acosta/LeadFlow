@@ -27,6 +27,10 @@ async function initDashboard() {
     document.getElementById('new-lead-btn')?.addEventListener('click', () => {
         openLeadModal();
     });
+        // 4.1. Configurar botón "Compartir Formulario"
+    document.getElementById('share-form-btn')?.addEventListener('click', openShareModal);
+    document.getElementById('close-share-modal-btn')?.addEventListener('click', closeShareModal);
+    document.getElementById('copy-url-btn')?.addEventListener('click', copyShareUrl);
 
     // 5. Configurar botón de cerrar modal
     document.getElementById('close-modal-btn')?.addEventListener('click', closeLeadModal);
@@ -282,4 +286,55 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+// ==========================================
+// COMPARTIR FORMULARIO
+// ==========================================
+
+/**
+ * Abre el modal de compartir con el link del formulario
+ */
+async function openShareModal() {
+    const modal = document.getElementById('share-modal');
+    const input = document.getElementById('share-url-input');
+
+    if (!modal || !input) return;
+
+    try {
+        input.value = 'Cargando...';
+        modal.classList.add('modal-open');
+
+        const url = await getPublicFormUrl();
+        input.value = url;
+    } catch (error) {
+        console.error('Error al obtener el link:', error);
+        notify('No se pudo generar el link. Intenta de nuevo.', 'error');
+        closeShareModal();
+    }
+}
+
+/**
+ * Cierra el modal de compartir
+ */
+function closeShareModal() {
+    const modal = document.getElementById('share-modal');
+    if (modal) modal.classList.remove('modal-open');
+}
+
+/**
+ * Copia el link al portapapeles
+ */
+async function copyShareUrl() {
+    const input = document.getElementById('share-url-input');
+    if (!input || !input.value) return;
+
+    try {
+        await navigator.clipboard.writeText(input.value);
+        notify('Link copiado al portapapeles', 'success');
+    } catch (error) {
+        // Fallback: seleccionar y copiar manualmente
+        input.select();
+        document.execCommand('copy');
+        notify('Link copiado al portapapeles', 'success');
+    }
 }

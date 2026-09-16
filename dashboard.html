@@ -20,9 +20,12 @@
 
         <main class="app-main">
             <div class="app-main-header">
-                <h2>Mis Leads</h2>
-                <button id="new-lead-btn" class="btn">+ Nuevo Lead</button>
-            </div>
+    <h2>Mis Leads</h2>
+    <div class="app-main-actions">
+        <button id="share-form-btn" class="btn btn-secondary">Compartir Formulario</button>
+        <button id="new-lead-btn" class="btn">+ Nuevo Lead</button>
+    </div>
+</div>
 
             <div id="leads-container" class="leads-container"></div>
         </main>
@@ -118,5 +121,27 @@
     <script>
         initDashboard();
     </script>
+    <!-- MODAL PARA COMPARTIR EL FORMULARIO -->
+<div id="share-modal" class="modal">
+    <div class="modal-content modal-content-small">
+        <div class="modal-header">
+            <h3>Comparte tu formulario</h3>
+            <button id="close-share-modal-btn" class="modal-close" type="button">×</button>
+        </div>
+
+        <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.875rem;">
+            Comparte este link con tus clientes. Cuando llenen el formulario, el lead aparecerá en tu dashboard con estado "Nuevo".
+        </p>
+
+        <div class="share-url-container">
+            <input type="text" id="share-url-input" class="input" readonly>
+            <button id="copy-url-btn" class="btn">Copiar</button>
+        </div>
+
+        <p class="text-muted" style="margin-top: 1rem; font-size: 0.75rem;">
+            ⚠️ Cualquiera con este link puede enviarte leads. No lo compartas públicamente si no quieres recibir envíos.
+        </p>
+    </div>
+</div>
 </body>
 </html>

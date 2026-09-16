@@ -518,3 +518,52 @@ body {
 .notification.closing {
     animation: slideOut 0.2s ease-in forwards;
 }
+/* ==========================================
+   MODAL DE COMPARTIR
+   ========================================== */
+
+.modal-content-small {
+    max-width: 520px;
+}
+
+.app-main-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.share-url-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.share-url-container input {
+    flex: 1;
+    font-size: 0.8125rem;
+    font-family: monospace;
+}
+/* ==========================================
+   FORMULARIO PÚBLICO
+   ========================================== */
+
+.auth-card-wide {
+    max-width: 520px;
+}
+
+.form-intro {
+    text-align: center;
+    color: var(--color-gray-500);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+}
+
+.auth-card textarea.input {
+    font-family: inherit;
+    resize: vertical;
+}

@@ -86,3 +86,30 @@ async function deleteLead(id) {
 function formatLeadId(uuid) {
     return '#' + uuid.substring(0, 6).toUpperCase();
 }
+
+/**
+ * Obtiene el form_token del usuario actual desde la tabla profiles
+ */
+async function getUserFormToken() {
+    const user = await getCurrentUser();
+    if (!user) throw new Error('No hay sesión activa');
+
+    const { data, error } = await supabaseClient
+        .from('profiles')
+        .select('form_token')
+        .eq('id', user.id)
+        .single();
+
+    if (error) throw error;
+    return data.form_token;
+}
+
+/**
+ * Construye el link completo del formulario público
+ */
+async function getPublicFormUrl() {
+    const token = await getUserFormToken();
+    // Obtener la ruta base actual (funciona tanto en localhost como en producción)
+    const baseUrl = window.location.origin + window.location.pathname.replace('dashboard.html', '');
+    return `${baseUrl}form.html?token=${token}`;
+}
