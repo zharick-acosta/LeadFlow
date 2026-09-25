@@ -2,7 +2,7 @@
 
 > CRM sencillo para gestionar y hacer seguimiento de leads desde un solo lugar.
 
-**Estado del proyecto:** 🔄 En planificación y diseño del MVP
+**Estado del proyecto:** 🔄 En desarrollo del MVP
 
 ---
 
