@@ -105,18 +105,18 @@ Acciones disponibles: **editar** y **eliminar**.
 - [ ] Definición del stack tecnológico
 
 ### Fase 2 — Desarrollo del MVP
-- [ ] Estructura base del proyecto
+- [x] Estructura base del proyecto
 - [x] Formulario de registro de leads
 - [ ] Dashboard con listado y filtros
 - [x] Vista individual del lead
-- [ ] Operaciones CRUD completas
-- [ ] Validaciones y manejo de errores básico
+- [x] Operaciones CRUD completas
+- [x] Validaciones y manejo de errores básico
 
 ### Fase 3 — Post-MVP *(futuro)*
-- [ ] Sistema de autenticación y login
+- [x] Sistema de autenticación y login
 - [ ] Múltiples roles de usuario
 - [ ] Historial de actividad por lead
-- [ ] Notificaciones y recordatorios
+- [x] Notificaciones y recordatorios
 - [ ] Exportación de datos
 - [ ] Integraciones externas
 
