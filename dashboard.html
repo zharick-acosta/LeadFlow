@@ -18,14 +18,51 @@
             </div>
         </header>
 
-        <main class="app-main">
+                <main class="app-main">
+            <!-- SECCIÓN DE ANALYTICS -->
+            <section class="analytics-section">
+                <div class="analytics-header">
+                    <h2>Resumen</h2>
+                    <button id="refresh-analytics-btn" class="btn btn-secondary">↻ Actualizar</button>
+                </div>
+
+                <!-- Tarjetas KPI -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-label">Total de leads</span>
+                        <span id="kpi-total" class="kpi-value">—</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Leads de hoy</span>
+                        <span id="kpi-hoy" class="kpi-value">—</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Ganados</span>
+                        <span id="kpi-ganados" class="kpi-value">—</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Tasa de conversión</span>
+                        <span id="kpi-conversion" class="kpi-value">—</span>
+                    </div>
+                </div>
+
+                <!-- Gráfico -->
+                <div class="chart-container">
+                    <h3 class="chart-title">Leads por estado</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="estado-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE LEADS -->
             <div class="app-main-header">
-    <h2>Mis Leads</h2>
-    <div class="app-main-actions">
-        <button id="share-form-btn" class="btn btn-secondary">Compartir Formulario</button>
-        <button id="new-lead-btn" class="btn">+ Nuevo Lead</button>
-    </div>
-</div>
+                <h2>Mis Leads</h2>
+                <div class="app-main-actions">
+                    <button id="share-form-btn" class="btn btn-secondary">Compartir Formulario</button>
+                    <button id="new-lead-btn" class="btn">+ Nuevo Lead</button>
+                </div>
+            </div>
 
             <div id="leads-container" class="leads-container"></div>
         </main>
@@ -112,11 +149,13 @@
     </div>
 <!-- Contenedor de notificaciones -->
 <div id="notifications-container" class="notifications-container"></div>
-       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/notifications.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/leads.js"></script>
+    <script src="js/analytics.js"></script>
     <script src="js/dashboard.js"></script>
     <script>
         initDashboard();

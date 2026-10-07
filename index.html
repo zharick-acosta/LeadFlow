@@ -3,25 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeadsFlow - CRM para Agencias</title>
+    <title>LeadsFlow - CRM simple para agencias y freelancers</title>
+    <meta name="description" content="LeadsFlow es el CRM simple que necesitas para gestionar tus leads desde un solo lugar. Sin curva de aprendizaje, sin complicaciones.">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>LeadsFlow</h1>
-            <p>CRM simple para gestionar tus leads</p>
-        </header>
+<body class="landing-body">
 
-        <main>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn">Iniciar Sesión</a>
-                <a href="signup.html" class="btn">Crear Cuenta</a>
+    <!-- NAVBAR -->
+    <nav class="landing-nav">
+        <div class="landing-nav-content">
+            <span class="landing-logo">LeadsFlow</span>
+            <div class="landing-nav-actions">
+                <a href="login.html" class="landing-nav-link">Iniciar Sesión</a>
+                <a href="signup.html" class="btn">Empezar Gratis</a>
             </div>
-        </main>
-    </div>
+        </div>
+    </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/config.js"></script>
+    <!-- HERO -->
+    <section class="landing-hero">
+        <div class="landing-hero-content">
+            <h1 class="landing-hero-title">
+                Gestiona tus leads sin complicaciones
+            </h1>
+            <p class="landing-hero-subtitle">
+                El CRM simple para agencias, freelancers y emprendedores.
+                Registra, organiza y da seguimiento a tus clientes potenciales
+                desde un solo lugar.
+            </p>
+            <div class="landing-hero-actions">
+                <a href="signup.html" class="btn btn-lg">Empezar Gratis</a>
+                <a href="demo.html" class="btn btn-lg btn-secondary">Ver Demo</a>
+            </div>
+            <p class="landing-hero-note">Sin tarjeta de crédito · Configúralo en 1 minuto</p>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="landing-section">
+        <div class="landing-section-content">
+            <h2 class="landing-section-title">Todo lo que necesitas, nada que te sobre</h2>
+            <p class="landing-section-subtitle">Herramientas simples y directas para que te enfoques en vender, no en aprender software.</p>
+
+            <div class="landing-features-grid">
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">01</div>
+                    <h3>Registra leads en segundos</h3>
+                    <p>Formulario simple con todos los campos que importan. Sin menús escondidos, sin pasos innecesarios.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">02</div>
+                    <h3>Estado siempre visible</h3>
+                    <p>Nuevo, Pendiente, En negociación, Ganado o Perdido. Sabe de un vistazo en qué punto está cada cliente.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">03</div>
+                    <h3>Formulario público incluido</h3>
+                    <p>Comparte un link único con tus clientes. Ellos llenan el formulario y el lead aparece automáticamente en tu CRM.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">04</div>
+                    <h3>Estadísticas claras</h3>
+                    <p>Visualiza tu pipeline de un vistazo: totales, leads del día, tasa de conversión y distribución por estado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="landing-section landing-section-alt">
+        <div class="landing-section-content">
+            <h2 class="landing-section-title">Empieza en 3 pasos</h2>
+            <p class="landing-section-subtitle">De cero a gestionar tus leads en menos de 5 minutos.</p>
+
+            <div class="landing-steps">
+                <div class="landing-step">
+                    <div class="landing-step-number">1</div>
+                    <h3>Crea tu cuenta</h3>
+                    <p>Solo necesitas tu email. Sin tarjeta de crédito, sin configuraciones complicadas.</p>
+                </div>
+                <div class="landing-step">
+                    <div class="landing-step-number">2</div>
+                    <h3>Registra o comparte</h3>
+                    <p>Agrega leads manualmente o comparte tu formulario público para que lleguen solos.</p>
+                </div>
+                <div class="landing-step">
+                    <div class="landing-step-number">3</div>
+                    <h3>Da seguimiento</h3>
+                    <p>Actualiza estados, agrega notas y cierra más ventas con tu pipeline bajo control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section class="landing-section">
+        <div class="landing-section-content">
+            <h2 class="landing-section-title">Precios simples</h2>
+            <p class="landing-section-subtitle">Sin sorpresas. Elige el plan que se ajuste a ti.</p>
+
+            <div class="landing-pricing-grid">
+                <div class="landing-pricing-card">
+                    <h3 class="landing-pricing-name">Free</h3>
+                    <div class="landing-pricing-price">$0<span>/mes</span></div>
+                    <p class="landing-pricing-desc">Para empezar y probar</p>
+                    <ul class="landing-pricing-features">
+                        <li>Hasta 50 leads</li>
+                        <li>Formulario público</li>
+                        <li>Estadísticas básicas</li>
+                        <li>1 usuario</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-block btn-secondary">Empezar Gratis</a>
+                </div>
+
+                <div class="landing-pricing-card landing-pricing-featured">
+                    <div class="landing-pricing-badge">Recomendado</div>
+                    <h3 class="landing-pricing-name">Pro</h3>
+                    <div class="landing-pricing-price">$19<span>/mes</span></div>
+                    <p class="landing-pricing-desc">Para freelancers activos</p>
+                    <ul class="landing-pricing-features">
+                        <li>Leads ilimitados</li>
+                        <li>Formulario público personalizado</li>
+                        <li>Estadísticas avanzadas</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-block">Empezar Ahora</a>
+                </div>
+
+                <div class="landing-pricing-card">
+                    <h3 class="landing-pricing-name">Business</h3>
+                    <div class="landing-pricing-price">$49<span>/mes</span></div>
+                    <p class="landing-pricing-desc">Para agencias y equipos</p>
+                    <ul class="landing-pricing-features">
+                        <li>Todo lo de Pro</li>
+                        <li>Múltiples usuarios</li>
+                        <li>Exportación de datos</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-block btn-secondary">Empezar Ahora</a>
+                </div>
+            </div>
+
+            <p class="landing-pricing-note">Precios de referencia. Ajustables según tus necesidades.</p>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="landing-cta">
+        <div class="landing-cta-content">
+            <h2>¿Listo para organizar tus leads?</h2>
+            <p>Crea tu cuenta gratis y empieza a usarlo en menos de 1 minuto.</p>
+            <a href="signup.html" class="btn btn-lg">Crear Cuenta Gratis</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="landing-footer">
+        <div class="landing-footer-content">
+            <span class="landing-logo">LeadsFlow</span>
+            <p class="landing-footer-text">CRM simple para agencias, freelancers y emprendedores.</p>
+            <p class="landing-footer-copy">© 2026 LeadsFlow. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

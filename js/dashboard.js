@@ -41,8 +41,14 @@ async function initDashboard() {
     // 7. Configurar botón eliminar
     document.getElementById('delete-lead-btn')?.addEventListener('click', handleLeadDelete);
 
-    // 8. Cargar leads
-    await loadLeads();
+        // 8. Configurar botón de actualizar analytics
+    document.getElementById('refresh-analytics-btn')?.addEventListener('click', async () => {
+        await loadAnalytics();
+        notify('Estadísticas actualizadas', 'success', 2000);
+    });
+
+    // 9. Cargar analytics y leads en paralelo
+    await Promise.all([loadAnalytics(), loadLeads()]);
 }
 
 /**
@@ -70,10 +76,13 @@ async function loadLeads() {
     const container = document.getElementById('leads-container');
     if (!container) return;
 
-    try {
+       try {
         const leads = await getLeads();
         renderLeads(leads);
+        // Refrescar analytics cada vez que se recargan los leads
+        await loadAnalytics();
     } catch (error) {
+    {
         console.error('Error al cargar leads:', error);
         container.innerHTML = `
             <div class="empty-state">
@@ -83,7 +92,7 @@ async function loadLeads() {
         `;
     }
 }
-
+}
 /**
  * Renderiza la lista de leads en una tabla
  */
