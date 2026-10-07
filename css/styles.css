@@ -1029,3 +1029,56 @@ body {
         gap: 1rem;
     }
 }
+/* ==========================================
+   MODO DEMO
+   ========================================== */
+
+.demo-banner {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    padding: 0.625rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.demo-banner-text {
+    color: var(--color-gray-100);
+}
+
+.demo-banner-link {
+    color: var(--color-white);
+    text-decoration: underline;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.demo-banner-link:hover {
+    opacity: 0.8;
+}
+
+.demo-modal-notice {
+    background-color: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 6px;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+    text-align: center;
+}
+
+.demo-modal-notice strong {
+    color: var(--color-gray-900);
+}
+
+@media (max-width: 640px) {
+    .demo-banner {
+        flex-direction: column;
+        gap: 0.375rem;
+        padding: 0.75rem 1rem;
+    }
+}

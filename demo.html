@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - LeadsFlow</title>
+    <meta name="description" content="Prueba LeadsFlow sin registrarte. Mira cómo funciona el CRM con datos de ejemplo.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- BANNER DE DEMO -->
+    <div class="demo-banner">
+        <span class="demo-banner-text">Estás viendo una demo interactiva de LeadsFlow</span>
+        <a href="signup.html" class="demo-banner-link">Crear cuenta gratis →</a>
+    </div>
+
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="app-header-content">
+                <h1 class="app-logo">LeadsFlow</h1>
+                <div class="app-header-user">
+                    <span class="user-email">Modo Demo</span>
+                    <a href="index.html" class="btn btn-secondary">Salir de la demo</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="app-main">
+
+            <!-- SECCIÓN DE ANALYTICS -->
+            <section class="analytics-section">
+                <div class="analytics-header">
+                    <h2>Resumen</h2>
+                    <button id="refresh-analytics-btn" class="btn btn-secondary">↻ Actualizar</button>
+                </div>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-label">Total de leads</span>
+                        <span id="kpi-total" class="kpi-value">—</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Leads de hoy</span>
+                        <span id="kpi-hoy" class="kpi-value">—</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Ganados</span>
+                        <span id="kpi-ganados" class="kpi-value">—</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Tasa de conversión</span>
+                        <span id="kpi-conversion" class="kpi-value">—</span>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">Leads por estado</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="estado-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE LEADS -->
+            <div class="app-main-header">
+                <h2>Mis Leads</h2>
+                <div class="app-main-actions">
+                    <button id="share-form-btn" class="btn btn-secondary">Compartir Formulario</button>
+                    <button id="new-lead-btn" class="btn">+ Nuevo Lead</button>
+                </div>
+            </div>
+
+            <div id="leads-container" class="leads-container"></div>
+        </main>
+    </div>
+
+    <!-- MODAL DE LEAD -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Nuevo Lead</h3>
+                <button id="close-modal-btn" class="modal-close" type="button">×</button>
+            </div>
+
+            <div class="demo-modal-notice">
+                <strong>Modo demo:</strong> No puedes guardar cambios. <a href="signup.html">Crea una cuenta</a> para usar LeadsFlow de verdad.
+            </div>
+
+            <form id="lead-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-nombre">Nombre *</label>
+                        <input type="text" id="field-nombre" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="field-apellido">Apellido *</label>
+                        <input type="text" id="field-apellido" class="input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-email">Email</label>
+                        <input type="email" id="field-email" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label for="field-telefono">Teléfono</label>
+                        <input type="tel" id="field-telefono" class="input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-empresa">Empresa</label>
+                        <input type="text" id="field-empresa" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label for="field-servicio">Servicio</label>
+                        <input type="text" id="field-servicio" class="input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-estado">Estado</label>
+                        <select id="field-estado" class="input">
+                            <option value="Nuevo">Nuevo</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En negociación">En negociación</option>
+                            <option value="Ganado">Ganado</option>
+                            <option value="Perdido">Perdido</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="field-fecha-contrato">Fecha de contrato</label>
+                        <input type="date" id="field-fecha-contrato" class="input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="field-proximo-paso">Próximo paso</label>
+                    <input type="text" id="field-proximo-paso" class="input">
+                </div>
+
+                <div class="form-group">
+                    <label for="field-notas">Notas</label>
+                    <textarea id="field-notas" class="input" rows="3"></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="delete-lead-btn" class="btn btn-danger">Eliminar</button>
+                    <div class="modal-actions-right">
+                        <button type="button" class="btn btn-secondary" onclick="closeLeadModal()">Cancelar</button>
+                        <button type="submit" class="btn">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL COMPARTIR -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content modal-content-small">
+            <div class="modal-header">
+                <h3>Comparte tu formulario</h3>
+                <button id="close-share-modal-btn" class="modal-close" type="button">×</button>
+            </div>
+
+            <p class="text-muted" style="margin-bottom: 1rem; font-size: 0.875rem;">
+                Así es como se ve el link que compartirías con tus clientes:
+            </p>
+
+            <div class="share-url-container">
+                <input type="text" id="share-url-input" class="input" value="https://leadsflow.app/form.html?token=demo-token-12345" readonly>
+                <button id="copy-url-btn" class="btn">Copiar</button>
+            </div>
+
+            <p class="text-muted" style="margin-top: 1rem; font-size: 0.75rem;">
+                En una cuenta real, este link sería único para ti. Solo tú podrías ver los leads que lleguen por él.
+            </p>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div id="notifications-container" class="notifications-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/demo.js"></script>
+    <script>
+        initDemo();
+    </script>
+</body>
+</html>
