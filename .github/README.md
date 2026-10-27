@@ -39,16 +39,14 @@ LeadsFlow busca resolver eso con una herramienta directa y sin fricción, diseñ
 | Diseño de vista individual de lead | ✅ Completado   |
 | Modelo Entidad-Relación (ERD)      | ✅ Completado |
 | Estructura de la base de datos     | ✅ Completado  |
-| Definición del stack tecnológico   | 🔄 En progreso   |
+| Definición del stack tecnológico   | ✅ Completado   |
 | Implementación del frontend        | ⏳ Pendiente    |
-| Implementación del backend         | ⏳ Pendiente    |
+| Implementación del backend         | ✅ Completado    |
 | MVP funcional                      | ⏳ Pendiente    |
 
 ---
 
-## Funcionalidades planificadas para el MVP
-
-Las siguientes funcionalidades están definidas en el alcance del MVP. **Ninguna ha sido implementada aún.**
+## Funcionalidades de LeadFlow
 
 ### Dashboard
 - Saludo al administrador.
@@ -96,23 +94,23 @@ Acciones disponibles: **editar** y **eliminar**.
 
 ## Roadmap
 
-### Fase 1 — Planificación del MVP *(en curso)*
+### Fase 1 — Planificación del MVP 
 - [x] Definición del producto y flujo general
 - [x] Diseño del Dashboard V1
 - [x] Diseño de vista individual del lead
 - [x] Modelo Entidad-Relación (ERD)
 - [x] Estructura de la base de datos
-- [ ] Definición del stack tecnológico
+- [x] Definición del stack tecnológico
 
 ### Fase 2 — Desarrollo del MVP
 - [x] Estructura base del proyecto
 - [x] Formulario de registro de leads
-- [ ] Dashboard con listado y filtros
+- [x] Dashboard con listado y filtros
 - [x] Vista individual del lead
 - [x] Operaciones CRUD completas
 - [x] Validaciones y manejo de errores básico
 
-### Fase 3 — Post-MVP *(futuro)*
+### Fase 3 — Post-MVP *(en proceso)*
 - [x] Sistema de autenticación y login
 - [ ] Múltiples roles de usuario
 - [ ] Historial de actividad por lead
@@ -124,7 +122,11 @@ Acciones disponibles: **editar** y **eliminar**.
 
 ## Planificación técnica
 
-> El stack tecnológico aún no ha sido definido. Esta sección se actualizará una vez tomada esa decisión.
+> El stack utilizado para este MVP es :
+> HTML
+> CSS
+> JavaScript
+> Supabase
 
 ### Arquitectura general prevista
 
@@ -135,8 +137,8 @@ Frontend  →  Backend / API  →  Base de datos
 ```
 
 - **Frontend:** interfaz de usuario para gestión de leads. *[Stack por definir]*
-- **Backend:** lógica de negocio y exposición de datos. *[Stack por definir]*
-- **Base de datos:** almacenamiento relacional. *[Motor por definir]*
+- **Backend:** lógica de negocio y exposición de datos. *JavaScript*
+- **Base de datos:** almacenamiento relacional. *JavaScript, Supabase*
 
 ### Flujo general del sistema
 
@@ -154,11 +156,11 @@ Formulario de registro
 
 ## Estructura del proyecto
 
-> La estructura de directorios se definirá al seleccionar el stack. Por ahora el repositorio contiene documentación y planificación inicial.
-
 ```
 leadsflow/
-├── docs/           # Documentación técnica y de producto
+├── css/            # Estilos y frontend
+├── docs/           # Documentación técnica, de producto, manuales.
+├── js/             # logica, auth, animaciones. 
 ├── design/         # Wireframes y archivos de diseño
 └── README.md
 ```
