@@ -1,0 +1,86 @@
+/* =========================================
+   CONFIGURACIÓN DE FUENTES
+   ========================================= */
+@font-face {
+    font-family: 'Arsenica Antiqua';
+    /* Asegúrate de que el nombre del archivo coincida exactamente con el de tu carpeta docs */
+    src: url('../docs/arsenica-antiqua-bold1.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================
+   VARIABLES CSS (Identidad Visual Leadflow)
+   ========================================= */
+:root {
+    /* Colores oficiales */
+    --color-primary-dark: #074434;
+    --color-secondary-green: #ABC685;
+    --color-accent-blue: #99B3FF;
+    --color-neutral-gray: #C7C8CB;
+    --color-alt-blue: #1D2954;
+    
+    /* Colores de interfaz inferidos del diseño */
+    --bg-body: #FAFAE6; /* Fondo crema de la app */
+    --bg-sidebar: #F4F4DB; /* Fondo lateral ligeramente más oscuro */
+    --bg-card: #FFFFFF;
+    --bg-highlight: #F0F4FF; /* Azul muy claro para la tarjeta seleccionada */
+    
+    /* Textos */
+    --text-main: #1D2954;
+    --text-muted: #6B7280;
+    --text-light: #FFFFFF;
+    
+    /* Estados de la tabla */
+    --status-qualified-bg: #D1E7C6;
+    --status-qualified-text: #074434;
+    --status-new-bg: #E0E7FF;
+    --status-new-text: #1D2954;
+    --status-lost-bg: #E5E7EB;
+    --status-lost-text: #4B5563;
+
+    /* Tipografía */
+    --font-headings: 'Arsenica Antiqua', Georgia, serif;
+    --font-body: 'Arial', sans-serif; /* Fallback para el cuerpo */
+    
+    /* Bordes y Sombras */
+    --border-radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   RESET Y ESTILOS GLOBALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-headings);
+    color: var(--color-primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ocultar temporalmente el texto de los íconos para evitar parpadeos si no cargan */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
